@@ -72,6 +72,11 @@ def gameover(screen: pg.Surface) -> None:
 
 
 def init_bombs() -> tuple[list[pg.Rect], list[int]]:
+    """
+    爆弾の画像と加速度のリストを返す関数
+    引数:なし
+    戻り値:爆弾の画像のリストと加速度のリスト
+    """
     bb_imgs = []  # 爆弾の画像を格納するリスト
     for i in range(1,11):
         bb_img = pg.Surface((20*i, 20*i))  # 爆弾用Surface
