@@ -82,28 +82,28 @@ def init_bombs() -> tuple[list[pg.Rect], list[int]]:
     return bb_imgs, bb_accs
 
 
-# def calc_bomb_velocity(org_pos, dst_pos, current_velocity):
-#     """
-#     爆弾の新しい速度ベクトルを計算する
-#     :param org_pos: 爆弾の座標 (x, y)
-#     :param dst_pos: こうかとんの座標 (x, y)
-#     :param current_velocity: 現在の速度ベクトル (vx, vy)
-#     :return: 更新後の速度ベクトル (vx, vy)
-#     """
-#     diff_x = dst_pos[0] - org_pos[0]  # 差ベクトルの計算
-#     diff_y = dst_pos[1] - org_pos[1]
+def calc_bomb_velocity(org_pos, dst_pos, current_velocity):
+    """
+    爆弾の新しい速度ベクトルを計算する
+    :param org_pos: 爆弾の座標 (x, y)
+    :param dst_pos: こうかとんの座標 (x, y)
+    :param current_velocity: 現在の速度ベクトル (vx, vy)
+    :return: 更新後の速度ベクトル (vx, vy)
+    """
+    diff_x = dst_pos[0] - org_pos[0]  # 差ベクトルの計算
+    diff_y = dst_pos[1] - org_pos[1]
     
-#     distance = math.sqrt(diff_x**2 + diff_y**2)  # 距離の計算
+    distance = math.sqrt(diff_x**2 + diff_y**2)  # 距離の計算
     
-#     if distance < 300:  # 慣性
-#         return current_velocity
+    if distance < 300:  # 慣性
+        return current_velocity
     
-#     target_speed = math.sqrt(50)
+    target_speed = math.sqrt(50)
     
-#     vx = (diff_x / distance) * target_speed
-#     vy = (diff_y / distance) * target_speed
+    vx = (diff_x / distance) * target_speed
+    vy = (diff_y / distance) * target_speed
     
-#     return vx, vy
+    return vx, vy
         
 
 
