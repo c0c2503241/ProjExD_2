@@ -13,22 +13,22 @@ DELTA = {
     pg.K_RIGHT: (+5, 0),  # 右
 }
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-def get_kk_imgs() ->dict[tuple[int, int], pg.Surface]:
-    kkk_img = pg.image.load("fig/3.png")
-    kkk_r_img = pg.transform.flip(kkk_img, True, False)
-    kk_dict = {
-        (0, 0):pg.transform.rotozoom(kkk_img, 0, 0.9),
-        (0, 5): pg.transform.rotozoom(kkk_r_img, -90, 0.9),
-        (0, -5): pg.transform.rotozoom(kkk_r_img, 90, 0.9),  # こうかとんの画像
-        (5, 0): pg.transform.flip(kkk_img, True, False),  # こうかとんの画像
-        (-5, 0): pg.transform.rotozoom(kkk_img, 0, 0.9),  # こうかとんの画像
-        (5, 5): pg.transform.rotozoom(kkk_r_img, -45, 0.9),  # こうかとんの画像
-        (5, -5): pg.transform.rotozoom(kkk_r_img, 45, 0.9),  # こうかとんの画像
-        (-5, 5): pg.transform.rotozoom(kkk_img, 45, 0.9),  # こうかとんの画像
-        (-5, -5): pg.transform.rotozoom(kkk_img, 45, 0.9),  # こうかとんの画像
+# def get_kk_imgs() ->dict[tuple[int, int], pg.Surface]:
+#     kkk_img = pg.image.load("fig/3.png")
+#     kkk_r_img = pg.transform.flip(kkk_img, True, False)
+#     kk_dict = {
+#         (0, 0):pg.transform.rotozoom(kkk_img, 0, 0.9),
+#         (0, 5): pg.transform.rotozoom(kkk_r_img, -90, 0.9),
+#         (0, -5): pg.transform.rotozoom(kkk_r_img, 90, 0.9),  # こうかとんの画像
+#         (5, 0): pg.transform.flip(kkk_img, True, False),  # こうかとんの画像
+#         (-5, 0): pg.transform.rotozoom(kkk_img, 0, 0.9),  # こうかとんの画像
+#         (5, 5): pg.transform.rotozoom(kkk_r_img, -45, 0.9),  # こうかとんの画像
+#         (5, -5): pg.transform.rotozoom(kkk_r_img, 45, 0.9),  # こうかとんの画像
+#         (-5, 5): pg.transform.rotozoom(kkk_img, 45, 0.9),  # こうかとんの画像
+#         (-5, -5): pg.transform.rotozoom(kkk_img, 45, 0.9),  # こうかとんの画像
     
-    }
-    return kk_dict
+#     }
+#     return kk_dict
 
 
 def check_bound(rct: pg.Rect) -> tuple[bool, bool]:
@@ -82,28 +82,28 @@ def init_bombs() -> tuple[list[pg.Rect], list[int]]:
     return bb_imgs, bb_accs
 
 
-def calc_bomb_velocity(org_pos, dst_pos, current_velocity):
-    """
-    爆弾の新しい速度ベクトルを計算する
-    :param org_pos: 爆弾の座標 (x, y)
-    :param dst_pos: こうかとんの座標 (x, y)
-    :param current_velocity: 現在の速度ベクトル (vx, vy)
-    :return: 更新後の速度ベクトル (vx, vy)
-    """
-    diff_x = dst_pos[0] - org_pos[0]  # 差ベクトルの計算
-    diff_y = dst_pos[1] - org_pos[1]
+# def calc_bomb_velocity(org_pos, dst_pos, current_velocity):
+#     """
+#     爆弾の新しい速度ベクトルを計算する
+#     :param org_pos: 爆弾の座標 (x, y)
+#     :param dst_pos: こうかとんの座標 (x, y)
+#     :param current_velocity: 現在の速度ベクトル (vx, vy)
+#     :return: 更新後の速度ベクトル (vx, vy)
+#     """
+#     diff_x = dst_pos[0] - org_pos[0]  # 差ベクトルの計算
+#     diff_y = dst_pos[1] - org_pos[1]
     
-    distance = math.sqrt(diff_x**2 + diff_y**2)  # 距離の計算
+#     distance = math.sqrt(diff_x**2 + diff_y**2)  # 距離の計算
     
-    if distance < 300:  # 慣性
-        return current_velocity
+#     if distance < 300:  # 慣性
+#         return current_velocity
     
-    target_speed = math.sqrt(50)
+#     target_speed = math.sqrt(50)
     
-    vx = (diff_x / distance) * target_speed
-    vy = (diff_y / distance) * target_speed
+#     vx = (diff_x / distance) * target_speed
+#     vy = (diff_y / distance) * target_speed
     
-    return vx, vy
+#     return vx, vy
         
 
 
