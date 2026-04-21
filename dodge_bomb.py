@@ -13,22 +13,22 @@ DELTA = {
     pg.K_RIGHT: (+5, 0),  # 右
 }
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-# def get_kk_imgs() ->dict[tuple[int, int], pg.Surface]:
-#     kkk_img = pg.image.load("fig/3.png")
-#     kkk_r_img = pg.transform.flip(kkk_img, True, False)
-#     kk_dict = {
-#         (0, 0):pg.transform.rotozoom(kkk_img, 0, 0.9),
-#         (0, 5): pg.transform.rotozoom(kkk_r_img, -90, 0.9),
-#         (0, -5): pg.transform.rotozoom(kkk_r_img, 90, 0.9),  # こうかとんの画像
-#         (5, 0): pg.transform.flip(kkk_img, True, False),  # こうかとんの画像
-#         (-5, 0): pg.transform.rotozoom(kkk_img, 0, 0.9),  # こうかとんの画像
-#         (5, 5): pg.transform.rotozoom(kkk_r_img, -45, 0.9),  # こうかとんの画像
-#         (5, -5): pg.transform.rotozoom(kkk_r_img, 45, 0.9),  # こうかとんの画像
-#         (-5, 5): pg.transform.rotozoom(kkk_img, 45, 0.9),  # こうかとんの画像
-#         (-5, -5): pg.transform.rotozoom(kkk_img, 45, 0.9),  # こうかとんの画像
+def get_kk_imgs() ->dict[tuple[int, int], pg.Surface]:
+    kkk_img = pg.image.load("fig/3.png")
+    kkk_r_img = pg.transform.flip(kkk_img, True, False)
+    kk_dict = {
+        (0, 0):pg.transform.rotozoom(kkk_img, 0, 0.9),
+        (0, 5): pg.transform.rotozoom(kkk_r_img, -90, 0.9),
+        (0, -5): pg.transform.rotozoom(kkk_r_img, 90, 0.9),  # こうかとんの画像
+        (5, 0): pg.transform.flip(kkk_img, True, False),  # こうかとんの画像
+        (-5, 0): pg.transform.rotozoom(kkk_img, 0, 0.9),  # こうかとんの画像
+        (5, 5): pg.transform.rotozoom(kkk_r_img, -45, 0.9),  # こうかとんの画像
+        (5, -5): pg.transform.rotozoom(kkk_r_img, 45, 0.9),  # こうかとんの画像
+        (-5, 5): pg.transform.rotozoom(kkk_img, 45, 0.9),  # こうかとんの画像
+        (-5, -5): pg.transform.rotozoom(kkk_img, 45, 0.9),  # こうかとんの画像
     
-#     }
-#     return kk_dict
+    }
+    return kk_dict
 
 
 def check_bound(rct: pg.Rect) -> tuple[bool, bool]:
