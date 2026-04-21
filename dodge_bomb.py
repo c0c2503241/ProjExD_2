@@ -87,7 +87,7 @@ def init_bombs() -> tuple[list[pg.Rect], list[int]]:
     return bb_imgs, bb_accs
 
 
-def calc_bomb_velocity(org_pos, dst_pos, current_velocity):
+def calc_bomb_velocity(org_pos: tuple[float, float], dst_pos: tuple[float, float], current_velocity: tuple[float, float]) -> tuple[float, float]:
     """
     爆弾の新しい速度ベクトルを計算する
     :param org_pos: 爆弾の座標 (x, y)
